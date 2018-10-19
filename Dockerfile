@@ -6,6 +6,16 @@ RUN apt-get install -y git wget links curl rsync bc apt-transport-https libxml2 
 RUN apt-get install -y gawk libreadline6-dev libyaml-dev autoconf libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
 RUN apt-get install -y libmysqlclient-dev libmagickwand-dev imagemagick
 RUN apt-get install -y nodejs mysql-client-5.6 vim pdftk qt5-default libqt5webkit5-dev xvfb dbus-x11 gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x xfonts-75dpi
+RUN apt-get install -y unzip
+
+RUN curl https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /chrome.deb
+RUN dpkg -i /chrome.deb || apt-get install -yf
+RUN rm /chrome.deb
+
+RUN wget https://chromedriver.storage.googleapis.com/2.43/chromedriver_linux64.zip
+RUN unzip chromedriver_linux64.zip
+RUN mv chromedriver /usr/local/bin/
+RUN chmod +x /usr/local/bin/chromedriver
 
 RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
 RUN mv phantomjs-2.1.1-linux-x86_64.tar.bz2 /usr/local/share/
