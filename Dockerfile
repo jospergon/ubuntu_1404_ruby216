@@ -17,7 +17,7 @@ RUN unzip chromedriver_linux64.zip
 RUN mv chromedriver /usr/local/bin/
 RUN chmod +x /usr/local/bin/chromedriver
 
-RUN https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
+RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
 RUN dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
 
 RUN git clone https://github.com/sstephenson/rbenv.git /usr/local/rbenv
