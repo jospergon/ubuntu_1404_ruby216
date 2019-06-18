@@ -17,8 +17,8 @@ RUN unzip chromedriver_linux64.zip
 RUN mv chromedriver /usr/local/bin/
 RUN chmod +x /usr/local/bin/chromedriver
 
-RUN wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.trusty_amd64.deb
-RUN dpkg -i wkhtmltox_0.12.5-1.trusty_amd64.deb
+RUN wget https://builds.wkhtmltopdf.org/0.12.6-dev/wkhtmltox_0.12.6-0.20180618.3.dev.e6d6f54.trusty_amd64.deb
+RUN dpkg -i wkhtmltox_0.12.6-0.20180618.3.dev.e6d6f54.trusty_amd64.deb
 
 RUN git clone https://github.com/sstephenson/rbenv.git /usr/local/rbenv
 RUN echo '# rbenv setup' > /etc/profile.d/rbenv.sh
