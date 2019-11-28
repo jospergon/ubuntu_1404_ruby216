@@ -1,8 +1,9 @@
-FROM ubuntu:14.04
+FROM ubuntu:trusty-20190515
 
-RUN apt-get update
+RUN apt-get -y update
+
 RUN apt-get install -y build-essential
-RUN apt-get install -y git wget links curl rsync bc apt-transport-https libxml2 libxml2-dev libcurl4-openssl-dev openssl
+RUN apt-get install -y git wget curl rsync bc apt-transport-https libxml2 libxml2-dev libcurl4-openssl-dev openssl
 RUN apt-get install -y gawk libreadline6-dev libyaml-dev autoconf libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
 RUN apt-get install -y libmysqlclient-dev libmagickwand-dev imagemagick
 RUN apt-get install -y nodejs mysql-client-5.6 vim pdftk qt5-default libqt5webkit5-dev xvfb dbus-x11 gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x xfonts-base xfonts-75dpi
